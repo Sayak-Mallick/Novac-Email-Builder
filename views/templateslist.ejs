@@ -1,0 +1,57 @@
+
+        <center>
+            <img src="https://www.novactech.in/assets/img/Novac_logo.png" alt="">
+        </center>
+
+<br><br><br><br>
+
+<div class="card">
+    <div class="card-header">
+        <div class="row">
+            <div class="col-4">
+                <h4 class="font-weight-bold">All Templates</h4>
+            </div>
+            <div class="col-4">
+                <a href="/addTemplate" style="background-color: seagreen;" class="btn btn-success float-right"><i class="fa fa-plus mr-1"></i>Add New</a>
+            </div>
+            <div class="col-2">
+                <a href="/" style="background-color: seagreen;" class="btn btn-success float-right"><i class="fa fa-plus mr-1"></i>Send Template</a>
+            </div>
+        </div>
+    </div>
+<div class="card-body">
+<table class="table table-hover table-striped table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Name</th>
+                    <!-- <th scope="col">Template Content</th> -->
+                    <th scope="col">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if(emails.length > 0) { %>
+                    <% for(let email of emails) { %>
+                    <tr>
+                        <th scope="row"><%= email.name %></th>
+                        <!-- <td><%= email.template_content %></td> -->
+                        <!-- <td><%= email.status %></td> -->
+                        
+                        <td>
+                            <a href="/updateTemplate/<%= email._id %>" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i> Edit Template  </i></a>
+                            <a href="/deleteTemplate/<%= email._id %>" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> Delete Template </i></a>
+                        </td>
+                    </tr>
+                    <% } %>
+                <% } else { %>
+                    <tr>
+                        <td>No data found</td>
+                    </tr>
+                <% } %>
+            </tbody>
+            </table>
+    </div>
+</div>
+
+
+
+

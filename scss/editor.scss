@@ -1,0 +1,23 @@
+
+
+body
+{
+	font-family:"Helvetica Neue", Helvetica, -apple-system, Arial, "Lucida Grande", system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+$custom-select-indicator: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 2'%3E%3Cpath fill='%23aaa' d='M 2,2 0,0 h 4 z'/%3E%3C/svg%3E");
+$input-btn-padding-y: .4rem;
+$input-btn-padding-x: .5rem;
+$custom-select-padding-y: .4rem;
+
+#logo
+{
+	margin-left: 0.5rem;
+	margin-top: 0.15rem;
+}
+
+$input-height: default;
+
+@import "line-awesome";
+@import "bootstrap";
+@import "builder";

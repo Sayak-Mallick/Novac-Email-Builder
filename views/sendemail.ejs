@@ -1,0 +1,126 @@
+<div class="card">
+    <div class="card-header">
+    <center>
+            <img src="https://www.novactech.in/assets/img/Novac_logo.png" alt="">
+    </center>
+    </div>
+    <div class="card-body">
+        <form action="/postEmail" method="POST">
+            <div class="row">
+                <div class="col-6">
+                    <div class="form-group">
+                        <label class="col-form-label" for="firstname">To</label>
+                        <input type="text" class="form-control"  type="email" name="to" id="name" required placeholder="TO:" >
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label class="col-form-label" for="firstname">Subject</label>
+                        <input type="text" class="form-control"  name="subject" placeholder="Subject:" id="subject" required placeholder="Subject: ">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label class="col-form-label" for="firstname">CC</label>
+                        <input type="text" class="form-control" type="email" name="cc" id="name" required placeholder="CC:" >
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label class="col-form-label" for="firstname">BCC</label>
+                        <input type="text" class="form-control" type="email" name="bcc" id="name" required placeholder="BCC:" >
+                    </div>
+                </div>
+
+                <!-- <div class="col-12">
+                    <div class="form-group">
+                        <label for="addres">Body</label>
+                        <textarea class="form-control" name="body" id="body" cols="20" rows="5" placeholder="Body:"></textarea>
+                    </div>
+                </div> -->
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="cars">Choose a Template</label>                        
+                        <select name="templates" id="myselection">
+                             <option value="" selected>Select a Template</option>
+                            <% if(emails.length> 0) { %>
+                                <% for(let email of emails) { %> 
+                                    <option id="<%= email.name %>" value=<%= email.template_content %>><%= email.name %></option>  
+                                    <% } %>
+                                <% }%>                    
+                        </select>
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div class="form-group">
+                        <label for="cars">Preview</label>                        
+                        
+                            <% if(emails.length> 0) { %>
+                                <% for(let email of emails) { %>
+                                    <br><br>
+                                    <!-- <option><%= email.name %></option> -->
+                                    <div class="<%= email.name %> box">
+                                     <iframe height="300px" width="500px" srcdoc="<%= email.template_content_modified %>"></iframe>
+                                    </div>
+                                    <br>
+                                     <% } %>
+                                <% }%>                    
+                    </div>
+                </div>
+            </div>
+            
+            <div class="">
+                <button style="background-color: seagreen;" type="submit" class="btn btn-success">Submit</button>
+                <a style="color: seagreen;" href="/list" class="btn btn-light">Edit Templates</a>
+            </div>
+        </form>
+    </div>
+</div>
+<br><br><br><br>
+<style>
+      .box {
+        color: #fff;
+        padding: 20px;
+        display: none;
+        margin-top: 20px;
+      }
+
+select {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 700;
+  border: none;
+  border-radius: 8px;
+  border: 2px solid #3f51b5;
+  box-shadow: 0 15px 15px #efefef;
+  appearance: none;
+  background: #e8eaf6;
+  background-position: 95% 55%;
+  background-size: 22px;
+}
+    </style>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+      $(document).ready(function () {
+        $("select")
+          .change(function () {
+            $(this)
+              .find("option:selected")
+              .each(function () {
+                var optionValue = $(this).attr("id");
+                console.log("Option Value: ", optionValue);
+                if (optionValue) {
+                  $(".box")
+                    .not("." + optionValue)
+                    .hide();
+                  $("." + optionValue).show();
+                } else {
+                  $(".box").hide();
+                }
+              });
+          })
+        .change();
+      });
+    </script>
+    

@@ -1,0 +1,47 @@
+{
+  "name": "Novac-Email-Builder",
+  "description": "Drag and drop website builder javascript library",
+  "version": "0.0.1",
+  "author": "Sayak-Mallick",
+  "license": "Apache-2.0",
+  "main": "libs/builder/builder.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "express-ejs-layouts": "^2.5.1",
+    "joi": "^13.1.0",
+    "joi-objectid": "^2.0.0",
+    "jquery": "^3.0",
+    "mongoose": "^6.7.1",
+    "nodemailer": "^6.8.0",
+    "nodemon": "^2.0.20",
+    "winston": "^2.4.0"
+  },
+  "keywords": [
+    "vvvebjs",
+    "drag-drop",
+    "drag&drop",
+    "drag",
+    "drop",
+    "wysiwyg",
+    "web",
+    "template",
+    "editor",
+    "site",
+    "builder"
+  ],
+  "devDependencies": {
+    "gulp": "github:gulpjs/gulp",
+    "gulp-sass": "^4.0.2"
+  }
+}
